@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./directives.component.css'],
 })
 export class DirectivesComponent implements OnInit {
+    can: boolean = false;
+    name: string = 'tiago';
+
     classes = ['green-title', 'bk-title'];
 
     constructor() {}
