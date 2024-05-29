@@ -1,0 +1,10 @@
+<div>
+    <button type="button" (click)="doGetList()">Carregar</button>
+    <button type="button" (click)="doAddUser()">Adicionar</button>
+    <button type="button" (click)="doRemoveAll()">Remove todos</button>
+
+    <h1>Usuários</h1>
+    <ul>
+        <li *ngFor="let item of users">{{ item.name }}</li>
+    </ul>
+</div>

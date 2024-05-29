@@ -4,4 +4,5 @@
 -   [Diretivas](./directives/) Diretivas de style, class, if, else e etc.
 -   [Eventos](./events/) Eventos, onclick e etc.
 -   [Eventos](./emitter/) Emissão de eventos de um componente para o outro, login (filho) para o user (pai).
--   [List](./lists/) Diretiva for, trabalhando com listas
+-   [Lista](./lists/) Diretiva for, trabalhando com listas.
+-   [Serviços](./services/) Serviços em uma chamada externa.
