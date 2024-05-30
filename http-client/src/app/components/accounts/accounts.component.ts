@@ -13,12 +13,27 @@ export class AccountsComponent implements OnInit {
     constructor(private accountsService: AccountsService) {}
 
     ngOnInit(): void {
-        this.getAccounts();
+        this.list();
     }
 
-    getAccounts() {
-        this.accountsService
-            .getAccounts()
-            .subscribe((accounts) => (this.accounts = accounts));
+    list() {
+        this.accountsService.listAccounts().subscribe((accounts) => (this.accounts = accounts));
+    }
+
+    delete(id: number) {
+        this.accountsService.deleteAccount(id).subscribe(() => {
+            this.accounts = this.accounts.filter((item) => item.id !== id);
+        });
+    }
+
+    create(account: AccountInterface) {
+        this.accountsService.createAccount(account).subscribe((account) => this.accounts.push(account));
+    }
+
+    update(account: AccountInterface) {
+        this.accountsService.updateAccount(account).subscribe((account) => {
+            const index = this.accounts.findIndex((item) => item.id === account.id);
+            this.accounts[index] = account;
+        });
     }
 }

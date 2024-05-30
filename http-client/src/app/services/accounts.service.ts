@@ -11,7 +11,35 @@ export class AccountsService {
 
     constructor(private httpClient: HttpClient) {}
 
-    getAccounts(): Observable<AccountInterface[]> {
+    listAccounts(): Observable<AccountInterface[]> {
         return this.httpClient.get<AccountInterface[]>(this.api);
+    }
+
+    getAccount(id: number): Observable<AccountInterface> {
+        return this.httpClient.get<AccountInterface>(`${this.api}/${id}`);
+    }
+
+    createAccount(account: AccountInterface): Observable<AccountInterface> {
+        const configs = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+            }),
+        };
+
+        return this.httpClient.post<AccountInterface>(this.api, account, configs);
+    }
+
+    updateAccount(account: AccountInterface): Observable<AccountInterface> {
+        const configs = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+            }),
+        };
+
+        return this.httpClient.put<AccountInterface>(`${this.api}/${account.id}`, account, configs);
+    }
+
+    deleteAccount(id: number): Observable<AccountInterface> {
+        return this.httpClient.delete<AccountInterface>(`${this.api}/${id}`);
     }
 }
