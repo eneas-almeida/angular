@@ -5,5 +5,6 @@
 -   [Eventos](./events/) Eventos, onclick e etc.
 -   [Eventos (Emitter)](./emitter/) Emissão de eventos de um componente para o outro, login (filho) para o user (pai).
 -   [Lista](./lists/) Diretiva for, trabalhando com listas.
--   [Serviços](./services/) Serviços em uma chamada.
+-   [Serviços](./services/) Trabalhando com uma classe de serviços para isalemento de lógica.
 -   [Rotas](./routes/) Trabalhando com rotas.
+-   [Cliente http](./http-client/) Trabalhando com requisições http e o observable.

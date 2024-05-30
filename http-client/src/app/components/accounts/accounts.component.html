@@ -1,0 +1,9 @@
+<div class="accounts">
+    <button type="button" (click)="getAccounts()">Listar contas</button>
+    <h1>Accounts</h1>
+    <ul>
+        <li *ngFor="let account of accounts">
+            <span>{{ account.name }}</span>
+        </li>
+    </ul>
+</div>
